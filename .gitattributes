@@ -1,0 +1,2 @@
+# Exclude source documents from GitHub's language statistics
+data/raw/** linguist-documentation

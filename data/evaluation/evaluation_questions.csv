@@ -1,0 +1,46 @@
+question_id,question,expected_matter_ids,expected_passage_ids,expected_answer,category,answerable
+Q001,How long was James Carter's original non-compete period?,HC-2025-0142,DOC-2025-0142-02-P03,Twelve months.,fact_retrieval,true
+Q002,What geographic limit was in Carter's non-compete?,HC-2025-0142,DOC-2025-0142-02-P03,Fifty miles from Northstar's Westbridge office.,fact_retrieval,true
+Q003,How long was Carter's original customer non-solicitation covenant?,HC-2025-0142,DOC-2025-0142-02-P04,Six months.,fact_retrieval,true
+Q004,Why did the judge question the geographic restriction?,HC-2025-0142,DOC-2025-0142-08-P01,"Because Carter serviced national accounts, making a fifty-mile geographic limit appear poorly matched to the actual business risk.",fact_retrieval,true
+Q005,Did the court immediately rule on Northstar's injunction request at the May hearing?,HC-2025-0142,DOC-2025-0142-08-P04,No. The court deferred ruling for fourteen days to allow settlement discussions.,fact_retrieval,true
+Q006,Was Carter ultimately prohibited from continuing to work for Vertex?,HC-2025-0142,DOC-2025-0142-09-P01,No. Northstar agreed Carter could remain employed by Vertex.,fact_retrieval,true
+Q007,Which two named customers appear in Carter's settlement restriction?,HC-2025-0142,DOC-2025-0142-09-P02,Summit Bank and Orion Foods.,fact_retrieval,true
+Q008,What did the internal research memo consider stronger than the geographic non-compete?,HC-2025-0142,DOC-2025-0142-04-P02,The six-month customer non-solicitation covenant.,fact_retrieval,true
+Q009,What was the main drafting lesson recorded when the Carter matter closed?,HC-2025-0142,DOC-2025-0142-10-P02,"For national sales roles, customer-based restrictions may fit the risk better than geographic limits.",fact_retrieval,true
+Q010,Did Northstar have evidence at the hearing that Carter downloaded confidential files after giving notice?,HC-2025-0142,DOC-2025-0142-08-P03,No.,fact_retrieval,true
+Q011,When did Maria Lopez make her written compliance complaint?,HC-2025-0198,DOC-2025-0198-01-P02,"February 14, 2025.",fact_retrieval,true
+Q012,What issue did Lopez report to Compliance?,HC-2025-0198,DOC-2025-0198-04-P01,Possible duplicate outpatient billing entries.,fact_retrieval,true
+Q013,How many of the 37 encounters were confirmed to contain duplicate entries?,HC-2025-0198,DOC-2025-0198-05-P01,Twenty-two.,fact_retrieval,true
+Q014,Did the investigation find intentional fraudulent billing?,HC-2025-0198,DOC-2025-0198-05-P02,No.,fact_retrieval,true
+Q015,What was Lopez's 2024 annual performance rating?,HC-2025-0198,DOC-2025-0198-03-P01,Meets Expectations.,fact_retrieval,true
+Q016,How long after the compliance complaint was the PIP issued?,HC-2025-0198,DOC-2025-0198-03-P03,"Approximately one month later, on March 17, 2025.",fact_retrieval,true
+Q017,What comment by Lopez's supervisor created retaliation risk?,HC-2025-0198,DOC-2025-0198-07-P02,The supervisor allegedly said the compliance complaint had created 'a lot of unnecessary attention.',fact_retrieval,true
+Q018,What did the risk memo identify as Meridian's strongest defense?,HC-2025-0198,DOC-2025-0198-08-P02,The January supervisor note and documented missed deadlines during the PIP.,fact_retrieval,true
+Q019,For how much did the Lopez matter settle?,HC-2025-0198,DOC-2025-0198-09-P01,"$118,000.",fact_retrieval,true
+Q020,What process change did the closing memo recommend?,HC-2025-0198,DOC-2025-0198-10-P02,Require HR review before formal discipline of employees who recently made compliance complaints and preserve contemporaneous performance documentation.,fact_retrieval,true
+Q021,How many Arcadia files were copied to a removable drive on January 3?,HC-2026-0027,DOC-2026-0027-03-P02,214 files.,fact_retrieval,true
+Q022,How many repositories did Patel clone near his departure?,HC-2026-0027,DOC-2026-0027-03-P01,Three.,fact_retrieval,true
+Q023,Which repository was outside Patel's assigned project?,HC-2026-0027,DOC-2026-0027-03-P01,VehiclePath-X.,fact_retrieval,true
+Q024,Did Patel's confidentiality agreement prohibit him from working for a competitor?,HC-2026-0027,DOC-2026-0027-02-P03,No. It allowed competitor employment as long as Arcadia confidential information was not used or disclosed.,fact_retrieval,true
+Q025,Did forensic analysis prove that NovaMotion received the copied Arcadia files?,HC-2026-0027,DOC-2026-0027-04-P03,No.,fact_retrieval,true
+Q026,How many documents on the removable drive were opened after Patel joined NovaMotion?,HC-2026-0027,DOC-2026-0027-08-P01,Eleven.,fact_retrieval,true
+Q027,Did the temporary injunction bar Patel from all employment at NovaMotion?,HC-2026-0027,DOC-2026-0027-07-P02,No.,fact_retrieval,true
+Q028,What did the temporary injunction require Patel to do with the removable drive?,HC-2026-0027,DOC-2026-0027-07-P03,Deliver it to a neutral forensic examiner within three business days.,fact_retrieval,true
+Q029,What work restriction did Patel accept in settlement?,HC-2026-0027,DOC-2026-0027-09-P02,"For four months, he could not work on NovaMotion's autonomous vehicle path-planning module.",fact_retrieval,true
+Q030,What evidence did the Patel closing memo call the strongest?,HC-2026-0027,DOC-2026-0027-10-P02,"The January 3 copy of 214 files, including VehiclePath-X materials outside his assigned project, plus later access to eleven documents.",fact_retrieval,true
+Q031,Which two matters allowed the former employee to keep working for a competitor despite the dispute?,HC-2025-0142|HC-2026-0027,DOC-2025-0142-09-P01|DOC-2026-0027-07-P02,Carter/Northstar and Patel/Arcadia.,cross_matter,true
+Q032,Which matter involved a compliance complaint followed by a performance improvement plan?,HC-2025-0198,DOC-2025-0198-03-P03,The Lopez / Meridian matter.,cross_matter,true
+Q033,Which matter centered on a geographic non-compete rather than trade-secret copying?,HC-2025-0142,DOC-2025-0142-02-P03,The Carter / Northstar matter.,cross_matter,true
+Q034,Which matter had confirmed USB copying of 214 files?,HC-2026-0027,DOC-2026-0027-03-P02,The Patel / Arcadia matter.,cross_matter,true
+Q035,"Which matter ended with a $118,000 payment?",HC-2025-0198,DOC-2025-0198-09-P01,The Lopez / Meridian matter.,cross_matter,true
+Q036,How long does Hamilton & Cole ordinarily retain closed matter files?,FIRM,POL-DOCUMENT-P01,Seven years after the matter closing date.,firm_policy,true
+Q037,Can a restricted matter be included in general automated retrieval for an unauthorized user?,FIRM,POL-CLIENTCO-P02,No.,firm_policy,true
+Q038,At what point must matter-level authorization be enforced for an internal AI system?,FIRM,POL-CLIENTCO-P03,Before client content is supplied to a model or external service.,firm_policy,true
+Q039,Are AI-generated legal summaries themselves legal authority under firm policy?,FIRM,POL-LEGALRES-P02,No.,firm_policy,true
+Q040,What metadata is required for each matter?,FIRM,POL-MATTERNA-P02,"A unique matter ID, responsible partner, practice area, open date, status, and client identifier.",firm_policy,true
+Q041,What university did James Carter attend?,,,The dataset does not contain sufficient evidence to answer this question.,unanswerable,false
+Q042,What is Maria Lopez's home address?,,,The dataset does not contain sufficient evidence to answer this question.,unanswerable,false
+Q043,What was Rahul Patel's salary at Arcadia?,,,The dataset does not contain sufficient evidence to answer this question.,unanswerable,false
+Q044,Who won the 2024 Franklin Supreme Court election?,,,The dataset does not contain sufficient evidence to answer this question.,unanswerable,false
+Q045,What is Hamilton & Cole's annual revenue?,,,The dataset does not contain sufficient evidence to answer this question.,unanswerable,false
