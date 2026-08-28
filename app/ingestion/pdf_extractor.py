@@ -70,4 +70,4 @@ if __name__ == "__main__":
     print(f"Pages extracted: {extracted_document['page_count']}")
     print(f"Characters extracted: {len(extracted_document['text'])}")
     print("\nText preview:")
-    print(extracted_document["pages"])
+    print(extracted_document["text"])
