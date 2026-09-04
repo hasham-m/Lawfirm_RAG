@@ -13,6 +13,35 @@ def prepare_document_text(
     return f"title: none | text: {text}"
 
 
+def prepare_query_text(
+    query: str,
+) -> str:
+
+    return f"task: search result | query: {query}"
+
+
+def embed_query(
+    *,
+    client: genai.Client,
+    query: str,
+) -> np.ndarray:
+
+    prepared_text = prepare_query_text(query)
+
+    response = client.models.embed_content(
+        model=EMBEDDING_MODEL,
+        contents=prepared_text,
+    )
+
+    if not response.embeddings:
+        raise RuntimeError("No embedding returned for query.")
+
+    return np.asarray(
+        response.embeddings[0].values,
+        dtype=np.float32,
+    )
+
+
 def embed_documents(
     client: genai.Client,
     documents: list[dict],
