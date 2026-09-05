@@ -19,10 +19,33 @@ PASSTHROUGH_FIELDS = (
 TOP_LEVEL_PATTERN = re.compile(r"^\s*(\d+)\.\s+(.+?)\s*$")
 
 
-SUBSECTION_PATTERN = re.compile(r"^\s*(\d+\.\d+)\s+(.+?)\s*$")
-
+SUBSECTION_PATTERN = re.compile(r"^\s*((?:\d+|[A-Z])\.\d+)\s+(.+?)\s*$")
 
 QUOTED_DEFINITION_PATTERN = re.compile(r'^\s*(\d+\.\d+)\s+"([^"]+)"(?:\s+(.*))?\s*$')
+
+SCHEDULE_PATTERN = re.compile(
+    r"^\s*SCHEDULE\s+([A-Z])\s*[-–—:]\s*(.+?)\s*$",
+    re.IGNORECASE,
+)
+
+PAGE_NOISE_PATTERNS = (
+    re.compile(
+        r"^\s*Page\s+\d+(?:\s+of\s+\d+)?\s*$",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"^\s*Hamilton\s*&\s*Cole\s+LLP\s*\|\s*Matter\b.*\bPage\s+\d+\s*$",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"^\s*Hamilton\s*&\s*Cole\s+LLP\s*\|\s*Matter\b.*\bCONFIDENTIAL\b.*$",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"^\s*CONFIDENTIAL\b.*\bPage\s+\d+\s*$",
+        re.IGNORECASE,
+    ),
+)
 
 
 def _extract_pages(
@@ -101,6 +124,17 @@ def _extract_pages(
         ]
 
     return []
+
+
+def _is_page_noise(
+    line: str,
+) -> bool:
+
+    for pattern in PAGE_NOISE_PATTERNS:
+        if pattern.match(line):
+            return True
+
+    return False
 
 
 def _clean_heading(
@@ -195,6 +229,25 @@ def _match_top_level(
         section_id,
         heading,
         inline_body,
+    )
+
+
+def _match_schedule(
+    line: str,
+) -> tuple[str, str] | None:
+
+    match = SCHEDULE_PATTERN.match(line)
+
+    if not match:
+        return None
+
+    schedule_id = match.group(1).upper()
+
+    heading = _clean_heading(match.group(2))
+
+    return (
+        schedule_id,
+        heading,
     )
 
 
@@ -325,6 +378,9 @@ def parse_legal_sections(
             if not line:
                 continue
 
+            if _is_page_noise(line):
+                continue
+
             subsection_match = _match_subsection(line)
 
             if subsection_match:
@@ -364,6 +420,32 @@ def parse_legal_sections(
 
                 if inline_body:
                     current_section["text_parts"].append(inline_body)
+
+                continue
+
+            schedule_match = _match_schedule(line)
+
+            if schedule_match:
+                (
+                    schedule_id,
+                    heading,
+                ) = schedule_match
+
+                finalize_current_section()
+
+                finalize_current_parent()
+
+                current_parent_id = schedule_id
+
+                current_parent_heading = heading
+
+                current_parent_page_start = page_number
+
+                current_parent_page_end = page_number
+
+                current_parent_text_parts = []
+
+                current_parent_has_children = False
 
                 continue
 
